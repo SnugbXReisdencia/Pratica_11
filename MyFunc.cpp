@@ -1,5 +1,5 @@
-# include "MyFunc.h";
 # include <iostream>
+# include "MyFunc.h"
 
 using namespace std;
 
