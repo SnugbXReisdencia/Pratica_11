@@ -26,7 +26,7 @@ int main(){
    
    cout << "Palavra 1: " << palavra << endl;
    cout << "Palavra 2: " << palavra2 << endl;
-   cout << "Caracteres iguais: " << aux << endl;
+   cout << "As palavras posuem " << aux.length() << " caracteres iguais que sao: " << aux << endl;
 
     pause();
 
@@ -38,7 +38,7 @@ string caracter_iguais(string palavra, string palavra2){
     if(palavra.length() >= palavra2.length()){
         tam = palavra.length();
         for(int i = 0; i < tam; i++){
-            if(palavra2.find(palavra[i]) > -1 || palavra2.find(palavra[i]) < tam){
+            if(palavra2.find(palavra[i]) != string::npos){
                 aux += palavra[i];
             }
         }
@@ -48,7 +48,7 @@ string caracter_iguais(string palavra, string palavra2){
 
         for(int i = 0; i < tam; i++){
             
-            if(palavra.find(palavra2[i]) > -1 || palavra.find(palavra2[i]) < tam){
+            if(palavra.find(palavra2[i]) != string::npos){
                 aux += palavra2[i];
             }
         }
