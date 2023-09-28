@@ -35,14 +35,26 @@ int main(){
 string caracter_iguais(string palavra, string palavra2){
     string aux = "";
     int tam;
-    palavra.length() > palavra2.length() ? tam = palavra.length() : tam = palavra2.length();
-
-    for(int i = 0; i < tam; i++){
-        if(palavra[i] == palavra2[i]){
-            aux += palavra[i];
+    if(palavra.length() >= palavra2.length()){
+        tam = palavra.length();
+        for(int i = 0; i < tam; i++){
+            if(palavra2.find(palavra[i]) > -1 || palavra2.find(palavra[i]) < tam){
+                aux += palavra[i];
+            }
         }
     }
-    
+    else{ 
+        tam = palavra2.length();
+
+        for(int i = 0; i < tam; i++){
+            
+            if(palavra.find(palavra2[i]) > -1 || palavra.find(palavra2[i]) < tam){
+                aux += palavra2[i];
+            }
+        }
+    }
+    // uificador
+
     return aux;
 }
 
